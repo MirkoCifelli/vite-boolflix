@@ -15,6 +15,18 @@ export default {
             if (this.movie.original_language == 'ja') {
                 this.movie.original_language = 'JP'
             }
+            if (this.movie.original_language == 'ko') {
+                this.movie.original_language = 'KR'
+            }
+            if (this.movie.original_language == 'it') {
+                this.movie.original_language = 'IT'
+            }
+            if (this.movie.original_language == 'fr') {
+                this.movie.original_language = 'FR'
+            }
+            if (this.movie.original_language == 'zh') {
+                this.movie.original_language = 'CN'
+            }
         }
     },
     props:{
