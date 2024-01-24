@@ -7,10 +7,21 @@ export default {
         };
     },
     methods: {
-
+        changeFlag(){
+            this.movie.original_language== this.movie.original_language.toUppercase;
+            if (this.movie.original_language == 'en') {
+                this.movie.original_language = 'US'
+            }
+            if (this.movie.original_language == 'ja') {
+                this.movie.original_language = 'JP'
+            }
+        }
     },
     props:{
         movie: Object
+    },
+    mounted(){
+        this.changeFlag();
     }
 
 }
@@ -21,7 +32,7 @@ export default {
         <div>     
            <h2> {{ movie.title }} </h2>
             <h4>{{ movie.original_title }}</h4> 
-            <h5>{{ movie.original_language }}</h5>
+            <h5><img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
             <h6>{{ movie.vote_average }}</h6>
         </div>
     </main>

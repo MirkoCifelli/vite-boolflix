@@ -5,6 +5,7 @@ export const store = reactive({
     searchText: '',
     api:'e9ee2c0cab436e4f40a826c5ef1489a3',
     movie: [],
+    flagImg:'https://flagsapi.com/EU/flat/64.png',
 });
 
 

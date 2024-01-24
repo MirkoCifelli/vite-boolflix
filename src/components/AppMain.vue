@@ -20,8 +20,10 @@ export default {
     <main>
         <div class="container-main">
             <div class="row">
-                <div class="col" v-for="(elem,i) in store.movie" key="i" >
-                    <SingleMovie :movie="elem"/>
+                <div class="col">
+                    <singleMovie v-for="(elem,i) in store.movie"
+                    :key="i"
+                    :movie="elem" />
                 </div>
             </div>
         </div>
