@@ -8,7 +8,7 @@ export default {
     },
     methods: {
         changeFlag(){
-            this.movie.original_language== this.movie.original_language.toUppercase;
+            this.movie.original_language == this.movie.original_language.toUppercase;
             if (this.movie.original_language == 'en') {
                 this.movie.original_language = 'US'
             }
