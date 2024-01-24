@@ -21,7 +21,9 @@ export default {
             axios.get(this.store.baseUrl,{
             params:{
                 api_key: this.store.api,
-                query: this.store.searchText
+                query: this.store.searchText,
+                // poster_path:this.urlImg
+
             }
         }).then((response)=>{
             console.log(response)
@@ -32,7 +34,8 @@ export default {
             axios.get(this.store.baseUrlSerie,{
             params:{
                 api_key: this.store.api,
-                query: this.store.searchText
+                query: this.store.searchText,
+                // poster_path: this.urlImg
             }
         }).then((response)=>{
             console.log(response,'response serieee')

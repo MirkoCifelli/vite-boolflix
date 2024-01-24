@@ -41,6 +41,11 @@ export default {
 
 <template>
     <main>
+        <div>
+            <div class="img-box">
+            <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
+        </div>
+        </div>
         <div>     
            <h2> {{ serie.name }} </h2>
             <h4>{{ serie.original_name }}</h4> 

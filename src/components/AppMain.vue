@@ -23,6 +23,7 @@ export default {
         <div class="container-main">
             <div class="row">
                 <div class="col">
+                    <h2>Movie</h2>
                     <singleMovie v-for="(elem,i) in store.movie"
                     :key="i"
                     :movie="elem" />
@@ -35,11 +36,10 @@ export default {
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="col">
+                        <h2>Serie</h2>
                         <SingleSerie v-for="(elem,i) in store.serie"
                         :key="i"
-                        :serie="elem"/>
-                    </div>
+                        :serie="elem"/> 
                 </div>
             </div>
         </div>

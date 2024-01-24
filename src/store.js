@@ -5,9 +5,11 @@ export const store = reactive({
     searchText: '',
     api:'e9ee2c0cab436e4f40a826c5ef1489a3',
     movie: [],
-    flagImg:'https://flagsapi.com/EU/flat/64.png',
+    // flagImg:'https://flagsapi.com/EU/flat/64.png',
     serie:[],
-    baseUrlSerie:'https://api.themoviedb.org/3/search/tv'
+    baseUrlSerie:'https://api.themoviedb.org/3/search/tv',
+    // urlImg:'https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png'
+
 });
 
 

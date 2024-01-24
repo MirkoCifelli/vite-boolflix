@@ -41,6 +41,9 @@ export default {
 
 <template>
     <main>
+        <div class="img-box">
+            <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
+        </div>
         <div>     
            <h2> {{ movie.title }} </h2>
             <h4>{{ movie.original_title }}</h4> 
@@ -51,9 +54,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.container-main{
-    width: 100%;
-    height: calc(100vh - 160px);
-    padding: 20px;
-}
+// .img-box{
+//     width: 200px;
+//     height: 200px;
+//     img{
+//         width: 100%;
+//     }
+// }
 </style>
