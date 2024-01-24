@@ -27,6 +27,19 @@ export default {
             console.log(response)
             this.store.movie= response.data.results;
         });
+        },
+        getResultsSerie(){
+            axios.get(this.store.baseUrlSerie,{
+            params:{
+                api_key: this.store.api,
+                query: this.store.searchText
+            }
+        }).then((response)=>{
+            console.log(response,'response serieee')
+            this.store.serie= response.data.results;
+            console.log(response.data.results,'response serieee nuovaaaaa')
+
+        });
         }
     },
     created(){
@@ -41,6 +54,7 @@ export default {
     },
     mounted(){
         this.getResults();
+        this.getResultsSerie();
     }
 }
 </script>
@@ -48,7 +62,7 @@ export default {
 <template>
 
 
-    <AppHeader @performSearch="getResults()"/>
+    <AppHeader @performSearch="getResults(),getResultsSerie()" />
 
     <AppMain />
 

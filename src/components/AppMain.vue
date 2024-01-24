@@ -1,6 +1,7 @@
 <script>
 import { store } from '../store';
 import SingleMovie from './SingleMovie.vue';
+import SingleSerie from './SingleSerie.vue';
 export default {
     data() {
         return {
@@ -11,7 +12,8 @@ export default {
 
     },
     components:{
-        SingleMovie
+        SingleMovie,
+        SingleSerie
     }
 }
 </script>
@@ -24,6 +26,20 @@ export default {
                     <singleMovie v-for="(elem,i) in store.movie"
                     :key="i"
                     :movie="elem" />
+                </div>
+                <!-- <div class="col">
+                    <SingleSerie v-for="(elem,i) in store.serie"
+                    :key="i"
+                    :serie="elem"/>
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col">
+                        <SingleSerie v-for="(elem,i) in store.serie"
+                        :key="i"
+                        :serie="elem"/>
+                    </div>
                 </div>
             </div>
         </div>
