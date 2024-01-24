@@ -8,7 +8,7 @@ import { store } from './store';
 export default {
     data() {
         return {
-
+            store
         };
     },
     components: {
@@ -17,12 +17,29 @@ export default {
         // AppFooter
     },  
     methods: {
-
-    },
-    created(){
-        axios.get('').then((response)=>{
+        getResults(){
+            axios.get(this.store.baseUrl,{
+            params:{
+                api_key: this.store.api,
+                query: this.store.searchText
+            }
+        }).then((response)=>{
             console.log(response)
         });
+        }
+    },
+    created(){
+        // axios.get(this.store.baseUrl,{
+        //     params:{
+        //         api_key: this.store.api,
+        //         query: this.store.searchText
+        //     }
+        // }).then((response)=>{
+        //     console.log(response,'quiii')
+        // });
+    },
+    mounted(){
+        this.getResults
     }
 }
 </script>
@@ -30,11 +47,11 @@ export default {
 <template>
 
 
-    <AppHeader />
+    <AppHeader @performSearch="getResults()"/>
 
     <AppMain />
 
-    <AppFooter />
+    <!-- <AppFooter /> -->
 </template>
 
 <style lang="scss">

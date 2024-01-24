@@ -9,7 +9,9 @@ export default {
         };
     },
     methods: {
-
+        // search(){
+        //     this.$emit('performSearch');
+        // }
     }
 }
 </script>
@@ -27,7 +29,7 @@ export default {
                         aria-label="Search character">
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-primary mb-3">
+                    <button type="submit" class="btn btn-primary mb-3" @click="$emit('performSearch')">
                                     Search
                     </button>
                 </div>
