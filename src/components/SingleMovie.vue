@@ -1,6 +1,5 @@
 <script>
 import { store } from '../store';
-import SingleMovie from './SingleMovie.vue';
 export default {
     data() {
         return {
@@ -10,22 +9,21 @@ export default {
     methods: {
 
     },
-    components:{
-        SingleMovie
+    props:{
+        movie: Object
     }
+
 }
 </script>
 
 <template>
     <main>
-        <div class="container-main">
-            <div class="row">
-                <div class="col" v-for="(elem,i) in store.movie" key="i" >
-                    <SingleMovie :movie="elem"/>
-                </div>
-            </div>
+        <div>     
+           <h2> {{ movie.title }} </h2>
+            <h4>{{ movie.original_title }}</h4> 
+            <h5>{{ movie.original_language }}</h5>
+            <h6>{{ movie.vote_average }}</h6>
         </div>
-
     </main>
 </template>
 

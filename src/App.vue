@@ -25,6 +25,7 @@ export default {
             }
         }).then((response)=>{
             console.log(response)
+            this.store.movie= response.data.results;
         });
         }
     },
@@ -39,7 +40,7 @@ export default {
         // });
     },
     mounted(){
-        this.getResults
+        this.getResults();
     }
 }
 </script>

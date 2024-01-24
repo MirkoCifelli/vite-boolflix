@@ -9,9 +9,7 @@ export default {
         };
     },
     methods: {
-        // search(){
-        //     this.$emit('performSearch');
-        // }
+        
     }
 }
 </script>
