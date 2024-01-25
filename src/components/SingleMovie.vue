@@ -59,7 +59,8 @@ export default {
                 <div>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></div>
                 <!-- <h6> Vote:{{ movie.vote_average }}</h6> -->
                 <div class=" fs-6 ">
-                    <i v-for="(star,i) in 5" class="fa-star text-warning" 
+                    <i v-for="(star,i) in 5" class="fa-star text-warning"
+                    :key="i" 
                     :class="{
                     'fa-regular': averageToInt(movie.vote_average) <= i,
                     'fa-solid': averageToInt(movie.vote_average) > i

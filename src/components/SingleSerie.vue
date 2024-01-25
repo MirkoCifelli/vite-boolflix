@@ -62,8 +62,9 @@ export default {
                 <!-- <h6> Vote:{{ serie.vote_average }}</h6> -->
                 <div class=" fs-6 ">Original Title: {{ serie.original_name }}</div> 
                 <div >
-                    <i v-for="(star,i) in 5" class="fa-star text-warning" 
-                 :class="{
+                    <i v-for="(star,i) in 5" class="fa-star text-warning"
+                    :key="i"  
+                    :class="{
                     'fa-regular': averageToInt(serie.vote_average) <= i,
                     'fa-solid': averageToInt(serie.vote_average) > i
                 }"></i>
