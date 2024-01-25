@@ -46,20 +46,28 @@ export default {
 
 <template>
     <main>
-        <div class="container-img m-3">
+        <div class="container-img m-5">
             <div class="img-box">
-                <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
+                <img v-if=" movie.poster_path !== null" :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
+                <div v-else class="img-box">
+                    <img src="../../public/vite.svg" alt="">
+                </div>
             </div>
-            <div class="img-info text-white p-3">     
-                <h2> Title: {{ movie.title }} </h2>
-                <h4>Original Title: {{ movie.original_title }}</h4> 
-                <h5>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
-                <h6> Vote:{{ movie.vote_average }}</h6>
-                <i v-for="(star,i) in 5" class="fa-star text-warning" 
-                 :class="{
+            <div class="img-info text-white">     
+                <div class=" fs-6 "> Title: {{ movie.title }} </div>
+                <div class=" fs-6 ">Original Title: {{ movie.original_title }}</div> 
+                <div>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></div>
+                <!-- <h6> Vote:{{ movie.vote_average }}</h6> -->
+                <div class=" fs-6 ">
+                    <i v-for="(star,i) in 5" class="fa-star text-warning" 
+                    :class="{
                     'fa-regular': averageToInt(movie.vote_average) <= i,
                     'fa-solid': averageToInt(movie.vote_average) > i
-                }"></i>
+                    }"></i>
+                </div>
+                <span>
+                    {{ movie.overview }}
+                </span>
             </div>
         </div>
     </main>
@@ -98,6 +106,10 @@ export default {
         &:hover{
             opacity: 1;
         }
+        
+    }
+    span{
+        font-size: 12px;
     }
     
 }

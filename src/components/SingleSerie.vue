@@ -52,15 +52,22 @@ export default {
                 <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
             </div>
             <div class="img-info text-white p-3">     
-                <h2> Title: {{ serie.name }} </h2>
-                <h4>Original Title: {{ serie.original_name }}</h4> 
-                <h5>Flag: <img :src="'https://flagsapi.com/'+serie.original_language+'/flat/64.png'" alt=""></h5>
-                <h6> Vote:{{ serie.vote_average }}</h6>
-                <i v-for="(star,i) in 5" class="fa-star text-warning" 
+                <div class=" fs-6 "> Title: {{ serie.name }} </div>
+                <div class=" fs-6 ">Original Title: {{ serie.original_name }}</div> 
+                <div class=" fs-6 ">Original Title: {{ serie.original_name }}</div> 
+                <div >Flag: <img :src="'https://flagsapi.com/'+serie.original_language+'/flat/64.png'" alt=""></div>
+                <!-- <h6> Vote:{{ serie.vote_average }}</h6> -->
+                <div class=" fs-6 ">Original Title: {{ serie.original_name }}</div> 
+                <div >
+                    <i v-for="(star,i) in 5" class="fa-star text-warning" 
                  :class="{
                     'fa-regular': averageToInt(serie.vote_average) <= i,
                     'fa-solid': averageToInt(serie.vote_average) > i
                 }"></i>
+                </div>
+                <span>
+                    {{ serie.overview }}
+                </span>
             </div>
         </div>
         
@@ -99,6 +106,9 @@ export default {
         &:hover{
             opacity: 1;
         }
+    }
+    span{
+        font-size: 12px;
     }
     
 }
