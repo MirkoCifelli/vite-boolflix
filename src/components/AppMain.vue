@@ -22,7 +22,7 @@ export default {
     <main>
         <div class="container-main">
             <div class="row">
-                <div class="col-12 text-bg-dark text-center pt-2">
+                <div class="col-12 text-bg-dark text-center p-2">
                     <h2>Movie</h2>  
                 </div>
                 <div class=" d-flex flex-wrap justify-content-around card-container bg-dark">
@@ -33,7 +33,7 @@ export default {
             </div>
 
             <div class="row">
-                <div class="col-12 text-bg-dark text-center">
+                <div class="col-12 text-bg-dark text-center p-2">
                     <h2>Serie</h2>  
                 </div>
                 <div class=" d-flex flex-wrap justify-content-around card-container bg-dark">
