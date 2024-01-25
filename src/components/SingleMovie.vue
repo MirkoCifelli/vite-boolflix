@@ -46,19 +46,21 @@ export default {
 
 <template>
     <main>
-        <div class="img-box">
-            <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
-        </div>
-        <div>     
-           <h2> Title: {{ movie.title }} </h2>
-            <h4>Original Title: {{ movie.original_title }}</h4> 
-            <h5>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
-            <h6> Vote:{{ movie.vote_average }}</h6>
-            <i v-for="(star,i) in 5" class="fa-star text-warning" 
-            :class="{
+        <div class="container-img m-3">
+            <div class="img-box">
+                <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
+            </div>
+            <div class="img-info text-white">     
+                <h2> Title: {{ movie.title }} </h2>
+                <h4>Original Title: {{ movie.original_title }}</h4> 
+                <h5>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
+                <h6> Vote:{{ movie.vote_average }}</h6>
+                <i v-for="(star,i) in 5" class="fa-star text-warning" 
+                 :class="{
                     'fa-regular': averageToInt(movie.vote_average) <= i,
                     'fa-solid': averageToInt(movie.vote_average) > i
                 }"></i>
+            </div>
         </div>
     </main>
 </template>
@@ -71,4 +73,38 @@ export default {
 //         width: 100%;
 //     }
 // }
+.container-img{
+    width: 300px;
+    height: 450px;
+    position: relative;
+    &:hover .img-box{ 
+        opacity: 0;
+    }
+    .img-box{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+         img{
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+        }
+    }
+    .img-info{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    
+}
 </style>
