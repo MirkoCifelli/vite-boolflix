@@ -51,7 +51,7 @@ export default {
             <div class="img-box">
                 <img v-if="serie.poster_path!== null" :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
                 <div v-else class="img-box">
-                    <img src="../../public/vite.svg" alt="">
+                    <img src="https://siliconvalleygazette.com/wp-content/uploads/2021/12/what-is-the-404-not-found-error.png" alt="">
                 </div>
             </div>
             <div class="img-info text-white p-3">     
