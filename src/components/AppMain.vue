@@ -28,7 +28,8 @@ export default {
                 <div class=" d-flex flex-wrap justify-content-around card-container bg-dark">
                     <singleMovie v-for="(elem,i) in store.movie"
                     :key="i"
-                    :movie="elem" />
+                    :movie="elem" 
+                    class="mt-2"/>
                 </div>
             </div>
 
@@ -39,7 +40,8 @@ export default {
                 <div class=" d-flex flex-wrap justify-content-around card-container bg-dark">
                     <SingleSerie v-for="(elem,i) in store.serie"
                     :key="i"
-                    :serie="elem" />
+                    :serie="elem" 
+                    class="mt-2 "/>
                 </div>
             </div>
         </div>

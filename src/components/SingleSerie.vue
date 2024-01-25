@@ -83,6 +83,7 @@ export default {
     height: 400px;
     position: relative;
     margin-bottom: 40px;
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.89);
     &:hover .img-box{ 
         opacity: 0.5;
         filter: blur(2px);
