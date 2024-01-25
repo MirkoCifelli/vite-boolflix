@@ -84,7 +84,8 @@ export default {
     position: relative;
     margin-bottom: 40px;
     &:hover .img-box{ 
-        opacity: 0;
+        opacity: 0.5;
+        filter: blur(2px);
     }
     .img-box{
         width: 100%;
