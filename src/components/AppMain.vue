@@ -30,18 +30,16 @@ export default {
                     :key="i"
                     :movie="elem" />
                 </div>
-                <!-- <div class="col">
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-bg-dark text-center">
+                    <h2>Serie</h2>  
+                </div>
+                <div class=" d-flex flex-wrap justify-content-between card-container bg-dark">
                     <SingleSerie v-for="(elem,i) in store.serie"
                     :key="i"
-                    :serie="elem"/>
-                </div> -->
-            </div>
-            <div class="row">
-                <div class="col">
-                        <h2>Serie</h2>
-                        <SingleSerie v-for="(elem,i) in store.serie"
-                        :key="i"
-                        :serie="elem"/> 
+                    :serie="elem" />
                 </div>
             </div>
         </div>
@@ -52,8 +50,6 @@ export default {
 <style lang="scss" scoped>
 .container-main{
     width: 100%;
-    height: calc(100vh - 100px);
-    // padding: 20px;
-    
+    height: calc(100vh - 100px); 
 }
 </style>

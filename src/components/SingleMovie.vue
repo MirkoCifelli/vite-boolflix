@@ -50,7 +50,7 @@ export default {
             <div class="img-box">
                 <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
             </div>
-            <div class="img-info text-white">     
+            <div class="img-info text-white p-3">     
                 <h2> Title: {{ movie.title }} </h2>
                 <h4>Original Title: {{ movie.original_title }}</h4> 
                 <h5>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
@@ -66,13 +66,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// .img-box{
-//     width: 200px;
-//     height: 200px;
-//     img{
-//         width: 100%;
-//     }
-// }
+
 .container-img{
     width: 300px;
     height: 450px;

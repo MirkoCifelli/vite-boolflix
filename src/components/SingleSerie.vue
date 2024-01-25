@@ -46,25 +46,60 @@ export default {
 
 <template>
     <main>
-        <div>
+        
+        <div class="container-img m-3">
             <div class="img-box">
-            <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
-        </div>
-        </div>
-        <div>     
-           <h2> {{ serie.name }} </h2>
-            <h4>{{ serie.original_name }}</h4> 
-            <h5><img :src="'https://flagsapi.com/'+serie.original_language+'/flat/64.png'" alt=""></h5>
-            <h6>{{ serie.vote_average }}</h6>
-            <i v-for="(star,i) in 5" class="fa-star text-warning" 
-            :class="{
+                <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
+            </div>
+            <div class="img-info text-white p-3">     
+                <h2> Title: {{ serie.name }} </h2>
+                <h4>Original Title: {{ serie.original_name }}</h4> 
+                <h5>Flag: <img :src="'https://flagsapi.com/'+serie.original_language+'/flat/64.png'" alt=""></h5>
+                <h6> Vote:{{ serie.vote_average }}</h6>
+                <i v-for="(star,i) in 5" class="fa-star text-warning" 
+                 :class="{
                     'fa-regular': averageToInt(serie.vote_average) <= i,
                     'fa-solid': averageToInt(serie.vote_average) > i
                 }"></i>
+            </div>
         </div>
+        
     </main>
 </template>
 
 <style lang="scss" scoped>
-
+.container-img{
+    width: 300px;
+    height: 450px;
+    position: relative;
+    &:hover .img-box{ 
+        opacity: 0;
+    }
+    .img-box{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+         img{
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+        }
+    }
+    .img-info{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    
+}
 </style>
