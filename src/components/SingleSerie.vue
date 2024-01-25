@@ -27,6 +27,11 @@ export default {
             if (this.movie.original_language == 'zh') {
                 this.movie.original_language = 'CN'
             }
+        },
+        averageToInt(x){
+            x = Math.round(x);
+            x = x / 2;
+            return x;
         }
     },
     props:{
@@ -51,6 +56,11 @@ export default {
             <h4>{{ serie.original_name }}</h4> 
             <h5><img :src="'https://flagsapi.com/'+serie.original_language+'/flat/64.png'" alt=""></h5>
             <h6>{{ serie.vote_average }}</h6>
+            <i v-for="(star,i) in 5" class="fa-star text-warning" 
+            :class="{
+                    'fa-regular': averageToInt(serie.vote_average) <= i,
+                    'fa-solid': averageToInt(serie.vote_average) > i
+                }"></i>
         </div>
     </main>
 </template>
