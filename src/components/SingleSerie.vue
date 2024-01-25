@@ -49,7 +49,10 @@ export default {
         
         <div class="container-img m-3">
             <div class="img-box">
-                <img :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
+                <img v-if="serie.poster_path!== null" :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
+                <div v-else class="img-box">
+                    <img src="../../public/vite.svg" alt="">
+                </div>
             </div>
             <div class="img-info text-white p-3">     
                 <div class=" fs-6 "> Title: {{ serie.name }} </div>
