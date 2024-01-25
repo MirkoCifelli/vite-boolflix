@@ -27,6 +27,11 @@ export default {
             if (this.movie.original_language == 'zh') {
                 this.movie.original_language = 'CN'
             }
+        },
+        averageToInt(x){
+            x = Math.round(x);
+            x = x / 2;
+            return x;
         }
     },
     props:{
@@ -45,10 +50,15 @@ export default {
             <img :src="'https://image.tmdb.org/t/p/w342'+movie.poster_path" alt="">
         </div>
         <div>     
-           <h2> {{ movie.title }} </h2>
-            <h4>{{ movie.original_title }}</h4> 
-            <h5><img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
-            <h6>{{ movie.vote_average }}</h6>
+           <h2> Title: {{ movie.title }} </h2>
+            <h4>Original Title: {{ movie.original_title }}</h4> 
+            <h5>Flag: <img :src="'https://flagsapi.com/'+movie.original_language+'/flat/64.png'" alt=""></h5>
+            <h6> Vote:{{ movie.vote_average }}</h6>
+            <i v-for="(star,i) in 5" class="fa-star text-warning" 
+            :class="{
+                    'fa-regular': averageToInt(movie.vote_average) <= i,
+                    'fa-solid': averageToInt(movie.vote_average) > i
+                }"></i>
         </div>
     </main>
 </template>
