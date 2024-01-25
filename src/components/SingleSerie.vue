@@ -47,7 +47,7 @@ export default {
 <template>
     <main>
         
-        <div class="container-img m-3">
+        <div class="container-img m-2">
             <div class="img-box">
                 <img v-if="serie.poster_path!== null" :src="'https://image.tmdb.org/t/p/w342'+serie.poster_path" alt="">
                 <div v-else class="img-box">
@@ -79,18 +79,19 @@ export default {
 
 <style lang="scss" scoped>
 .container-img{
-    width: 300px;
-    height: 450px;
+    width: 250px;
+    height: 400px;
     position: relative;
+    margin-bottom: 40px;
     &:hover .img-box{ 
         opacity: 0;
     }
     .img-box{
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
         
          img{
              width: 100%;
@@ -106,6 +107,7 @@ export default {
         top: 0;
         left: 0;
         opacity: 0;
+        overflow: auto;
         &:hover{
             opacity: 1;
         }

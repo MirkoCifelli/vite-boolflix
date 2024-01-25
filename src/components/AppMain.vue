@@ -22,10 +22,10 @@ export default {
     <main>
         <div class="container-main">
             <div class="row">
-                <div class="col-12 text-bg-dark text-center">
+                <div class="col-12 text-bg-dark text-center pt-2">
                     <h2>Movie</h2>  
                 </div>
-                <div class=" d-flex flex-wrap justify-content-between card-container bg-dark">
+                <div class=" d-flex flex-wrap justify-content-around card-container bg-dark">
                     <singleMovie v-for="(elem,i) in store.movie"
                     :key="i"
                     :movie="elem" />
@@ -36,7 +36,7 @@ export default {
                 <div class="col-12 text-bg-dark text-center">
                     <h2>Serie</h2>  
                 </div>
-                <div class=" d-flex flex-wrap justify-content-between card-container bg-dark">
+                <div class=" d-flex flex-wrap justify-content-around card-container bg-dark">
                     <SingleSerie v-for="(elem,i) in store.serie"
                     :key="i"
                     :serie="elem" />
